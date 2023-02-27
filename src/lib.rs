@@ -2,9 +2,9 @@ use once_cell::sync::Lazy;
 use regex::Regex;
 
 static NICE_MATCHER: Lazy<Regex> = Lazy::new(|| {
-    const pattern: &str =
+    const PATTERN: &str =
         r"(?i)69|(sixty(\s+|-)nine)|(soixante(\s+|-)neuf)|LXIX|ⅬⅩⅨ|ⅼⅹⅸ|‘’|“”|６９|六十九|ξθʹ|⑥⑨|⑹⑼|⓺⓽|🕕🕘|6️⃣9️";
-    return Regex::new(pattern).unwrap()
+    Regex::new(PATTERN).unwrap()
 });
 
 pub fn is_nice(s: &str) -> bool {

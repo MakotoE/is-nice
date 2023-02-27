@@ -5,6 +5,13 @@ edition = "2021"
 description = "Tells you whether or not a string is nice."
 license = "MIT"
 
+[lib]
+name = "is_nice"
+
+[[bin]]
+name = "is_nice"
+path = "src/main.rs"
+
 [dependencies]
 rstest = "0.16.0"
 regex = "1.7.1"
