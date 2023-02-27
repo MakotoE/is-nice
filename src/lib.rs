@@ -1,9 +1,14 @@
-pub fn is_nice(s: &str) -> bool {
-    if s.contains("69") {
-        return true
-    }
+use once_cell::sync::Lazy;
+use regex::Regex;
 
-    return false
+static NICE_MATCHER: Lazy<Regex> = Lazy::new(|| {
+    const pattern: &str =
+        r"(?i)69|(sixty(\s+|-)nine)|(soixante(\s+|-)neuf)|LXIX|ⅬⅩⅨ|ⅼⅹⅸ|‘’|“”|６９|六十九|ξθʹ|⑥⑨|⑹⑼|⓺⓽|🕕🕘|6️⃣9️";
+    return Regex::new(pattern).unwrap()
+});
+
+pub fn is_nice(s: &str) -> bool {
+    return NICE_MATCHER.find(s).is_some();
 }
 
 #[cfg(test)]
@@ -13,8 +18,28 @@ mod tests {
 
     #[rstest]
     #[case("", false)]
+    #[case("not nice", false)]
+    #[case("68", false)]
     #[case("69", true)]
+    #[case("96", false)]
+    #[case("sixty nine", true)]
+    #[case("sixty    nine", true)]
+    #[case("sixty-nine", true)]
+    #[case("SIXTY-NINE", true)]
+    #[case("soixante-neuf", true)]
+    #[case("LXIX", true)]
+    #[case("ⅬⅩⅨ", true)]
+    #[case("ⅼⅹⅸ", true)]
+    #[case("rustc 1.69.0", true)]
+    #[case("‘’", true)]
+    #[case("“”", true)]
+    #[case("６９", true)]
+    #[case("⑥⑨", true)]
+    #[case("⑹⑼", true)]
+    #[case("⓺⓽", true)]
+    #[case("🕕🕘", true)]
+    #[case("6️⃣9️", true)]
     fn test_is_nice(#[case] s: &str, #[case] expected: bool) {
-        assert_eq!(is_nice(s), expected);
+        assert_eq!(is_nice(s), expected, "{}", s);
     }
 }
