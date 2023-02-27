@@ -7,8 +7,10 @@ static NICE_MATCHER: Lazy<Regex> = Lazy::new(|| {
     Regex::new(PATTERN).unwrap()
 });
 
+/// Returns true if the given string is nice. A string is nice if it has a substring in which its
+/// numerical form is equivalent to 69.
 pub fn is_nice(s: &str) -> bool {
-    return NICE_MATCHER.find(s).is_some();
+    NICE_MATCHER.find(s).is_some()
 }
 
 #[cfg(test)]
@@ -21,7 +23,9 @@ mod tests {
     #[case("not nice", false)]
     #[case("68", false)]
     #[case("69", true)]
+    #[case("6.9", false)]
     #[case("96", false)]
+    #[case("9696", true)]
     #[case("sixty nine", true)]
     #[case("sixty    nine", true)]
     #[case("sixty-nine", true)]
