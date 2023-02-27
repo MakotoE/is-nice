@@ -1,6 +1,14 @@
 #![warn(clippy::all)]
 use is_nice::is_nice;
 
+fn convert_to_string(b: bool)-> &'static str {
+    if b {
+        "nice"
+    } else {
+        "not nice"
+    }
+}
+
 fn main() {
     let str = std::env::args().nth(1).unwrap_or(String::new());
 
@@ -9,5 +17,5 @@ fn main() {
         return;
     }
 
-    println!("{}", is_nice(&str));
+    println!("{}", convert_to_string(is_nice(&str)));
 }
