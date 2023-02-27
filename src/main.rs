@@ -1,7 +1,7 @@
 #![warn(clippy::all)]
 use is_nice::is_nice;
 
-fn convert_to_string(b: bool)-> &'static str {
+fn convert_to_string(b: bool) -> &'static str {
     if b {
         "nice"
     } else {
