@@ -1,3 +1,7 @@
+mod lib;
+
+use crate::lib::*;
+
 fn main() {
-    println!("Hello, world!");
+    is_nice("");
 }
