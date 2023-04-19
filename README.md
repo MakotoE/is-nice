@@ -34,6 +34,8 @@ is-nice ⓺⓽
 nice
 ```
 
+You can find the full list of nice strings in the [source code](https://github.com/MakotoE/is-nice/blob/main/src/lib.rs).
+
 Also check out [is-thirteen](https://github.com/MakotoE/is-thirteen).
 
 # WASM support
