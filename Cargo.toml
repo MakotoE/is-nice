@@ -4,6 +4,7 @@ version = "0.0.69"
 edition = "2021"
 description = "Tells you whether or not a string is nice."
 license = "MIT"
+repository = "https://github.com/MakotoE/is-nice"
 
 [lib]
 name = "is_nice"
