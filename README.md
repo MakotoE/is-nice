@@ -2,11 +2,11 @@
 
 # is-nice
 
-`is_nice()` tells you if a string is [nice](https://www.urbandictionary.com/define.php?term=nice) or not. Written in Rust 🚀, memory safe 🛟, and production ready 6️⃣9️⃣!
+`is_nice()` tells you if a string is [nice](https://www.urbandictionary.com/define.php?term=nice) or not. Written in Rust 🦀, memory safe 🛟, and blazingly fast 🚀! 
 
 To use as a library: `cargo add is-nice`
 
-You can also get the binary version with `cargo install is-nice`.
+You can also get the CLI version with `cargo install is-nice`.
 
 ```
 is-nice 68

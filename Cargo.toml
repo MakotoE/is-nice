@@ -9,7 +9,7 @@ license = "MIT"
 name = "is_nice"
 
 [[bin]]
-name = "is_nice"
+name = "is-nice"
 path = "src/main.rs"
 
 [dependencies]
