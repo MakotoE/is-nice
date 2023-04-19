@@ -6,6 +6,15 @@
 
 To use as a library: `cargo add is-nice`
 
+```rust
+use is_nice::is_nice;
+
+fn main() {
+    println!("{}", is_nice("69")); // true
+}
+
+```
+
 You can also get the CLI version with `cargo install is-nice`.
 
 ```
