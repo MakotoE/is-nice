@@ -26,6 +26,12 @@ nice
 
 is-nice LXIX
 nice
+
+is-nice soixante-neuf
+nice
+
+is-nice ⓺⓽
+nice
 ```
 
 Also check out [is-thirteen](https://github.com/MakotoE/is-thirteen).
