@@ -1,6 +1,6 @@
 [package]
 name = "is-nice"
-version = "0.0.1"
+version = "0.0.69"
 edition = "2021"
 description = "Tells you whether or not a string is nice."
 license = "MIT"

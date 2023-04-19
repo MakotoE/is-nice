@@ -23,4 +23,4 @@ Also check out [is-thirteen](https://github.com/MakotoE/is-thirteen).
 
 # WASM support
 
-Maybe.
+No.
