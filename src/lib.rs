@@ -2,7 +2,7 @@ use once_cell::sync::Lazy;
 use regex::Regex;
 
 static NICE_MATCHER: Lazy<Regex> = Lazy::new(|| {
-    const PATTERN: &str = r"(?i)6.9|69|(sixty(\s+|-)nine)|(soixante(\s+|-)neuf)|LXIX|ⅬⅩⅨ|ⅼⅹⅸ|‘’|“”|６９|六十九|ξθʹ|⑥⑨|⑹⑼|⓺⓽|🕕🕘|6️⃣9️";
+    const PATTERN: &str = r"(?i)6.9|69|(sixty(\s+|-)nine)|(soixante(\s+|-)neuf)|LXIX|ⅬⅩⅨ|ⅼⅹⅸ|‘’|“”|６９|六十九|ξθʹ|⑥⑨|⑹⑼|⓺⓽|🕕🕘|6️⃣9️|1000101|0x45|0o105";
     Regex::new(PATTERN).unwrap()
 });
 
@@ -50,6 +50,9 @@ mod tests {
     #[case("⓺⓽", true)]
     #[case("🕕🕘", true)]
     #[case("6️⃣9️", true)]
+    #[case("1000101", true)]
+    #[case("0x45", true)]
+    #[case("0o105", true)]
     fn test_is_nice(#[case] s: &str, #[case] expected: bool) {
         assert_eq!(is_nice(s), expected, "{}", s);
     }
