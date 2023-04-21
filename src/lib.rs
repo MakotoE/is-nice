@@ -50,6 +50,9 @@ mod tests {
     #[case("⓺⓽", true)]
     #[case("🕕🕘", true)]
     #[case("6️⃣9️", true)]
+    #[case("1000101", true)]
+    #[case("0x45", true)]
+    #[case("0o105", true)]
     fn test_is_nice(#[case] s: &str, #[case] expected: bool) {
         assert_eq!(is_nice(s), expected, "{}", s);
     }
